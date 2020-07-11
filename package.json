@@ -24,8 +24,13 @@
     "concurrently": "^5.2.0",
     "cors": "^2.8.5",
     "debug": "^3.2.6",
+    "enzyme": "^3.11.0",
     "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "fs": "0.0.1-security",
     "jquery": "^3.5.1",
+    "nodemon": "^2.0.4",
+    "pg": "^8.2.2",
     "popper": "^1.0.1",
     "popper.js": "^1.16.1",
     "prop-types": "^15.7.2",
@@ -33,7 +38,8 @@
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "sass": "^1.26.9"
+    "sass": "^1.26.9",
+    "sequelize": "^6.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",

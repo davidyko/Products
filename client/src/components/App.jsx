@@ -6,6 +6,8 @@ import Thumbnails from './Thumbnails';
 import Checklist from './Checklist';
 import Modal from './Modal';
 
+let ranNum = Math.floor(Math.random() * 5 + 1);
+
 class App extends Component {
   constructor() {
     super();
@@ -35,14 +37,21 @@ class App extends Component {
 
   getProductData() {
     const { currentProduct } = this.state;
-    fetch('http://52.26.193.201:3000/products/list')
+    fetch('/products/list')
       .then((res) => res.json())
+
+      //TODO: log what is in response. Should be object with "list" key and data in value
       .then((data) => this.setState({ products: data[currentProduct - 1] }));
   }
 
+  // for now, chosen product will be ranNum
+  // setState currentProduct to product's id/just ranNum?
+  //
+
+  // TODO: Might have to refactor endpoint to be able to accept currentProduct as a query/parameter
   getReviewData() {
     const { currentProduct } = this.state;
-    fetch(`http://52.26.193.201:3000/reviews/${currentProduct}/list`)
+    fetch(`/reviews/${currentProduct}/list`)
       .then((res) => res.json())
       .then((data) => this.setState({ reviews: data.results }))
       .then(() => this.averageStarRating());
@@ -50,7 +59,7 @@ class App extends Component {
 
   getProductImages() {
     const { currentStyle, currentProduct } = this.state;
-    fetch(`http://52.26.193.201:3000/products/${currentProduct}/styles/`)
+    fetch(`/products/${currentProduct}/styles/`)
       .then((res) => res.json())
       .then((data) => {
         this.setState({

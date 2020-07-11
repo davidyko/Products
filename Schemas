@@ -1,0 +1,91 @@
+PRODUCT LIST
+products/list
+parameters: page, count
+
+[
+  {
+		"id": 1,
+		"name": "Camo Onesie",
+		"slogan": "Blend in to your crowd",
+		"description": "The So Fatigues will wake you up and fit you in. This high energy camo will have you blending in to even the wildest surroundings.",
+		"category": "Jackets",
+		"default_price": "140"
+	},
+	// ...
+]
+
+
+
+PRODUCT INFORMATION
+products/:product_id
+parameter: product_id
+
+{
+	"id": 11,
+	"name": "Air Minis 250",
+	"slogan": "Full court support",
+	"description": "This optimized air cushion pocket reduces impact but keeps a perfect balance underfoot.",
+	"category": "Basketball Shoes",
+	"default_price": "0",
+	"features": [
+  	{
+			"feature": "Sole",
+			"value": "Rubber"
+		},
+  	{
+			"feature": "Material",
+			"value": "FullControlSkin"
+		},
+  	// ...
+	],
+}
+
+
+
+PRODUCT STYLES
+products/:product_id/styles
+parameter: product_id
+
+{
+	"product_id": "1",
+	"results": [
+  	{
+			"style_id": 1,
+			"name": "Forest Green & Black",
+			"original_price": "140",
+			"sale_price": "0",
+			"default?": 1,
+			"photos": [
+  			{
+					"thumbnail_url": "urlplaceholder/style_1_photo_number_thumbnail.jpg",
+					"url": "urlplaceholder/style_1_photo_number.jpg"
+				},
+  			{
+					"thumbnail_url": "urlplaceholder/style_1_photo_number_thumbnail.jpg",
+					"url": "urlplaceholder/style_1_photo_number.jpg"
+				}
+  			// ...
+			],
+		"skus": {
+			"XS": 8,
+			"S": 16,
+			"M": 17,
+			"L": 10,
+			"XL": 15
+		}
+	}
+  // ...
+}
+
+
+
+RELATED ITEMS
+/products/:product_id/related
+parameter: product_id
+
+[
+  2,
+  3,
+  8,
+  7
+],
