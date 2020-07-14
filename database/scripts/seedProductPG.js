@@ -1,14 +1,16 @@
 const path = require('path');
-const pg = require('./pgconnection.js');
+const pg = require('../pgconnection.js');
 
+
+// TODO: TEXT is faster than VARCHAR(num). Play
 const createProducts = () => {
   const query = `CREATE TABLE products (
-    _id SERIAL PRIMARY KEY,
-    name VARCHAR(30) NOT NULL,
-    default_price VARCHAR(3) NOT NULL,
-    slogan VARCHAR(100) NOT NULL,
-    description VARCHAR(200) NOT NULL,
-    category VARCHAR(30) NOT NULL
+    product_id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    default_price TEXT NOT NULL,
+    slogan TEXT NOT NULL,
+    description TEXT NOT NULL,
+    category TEXT NOT NULL
   )`;
 
   return pg.query('DROP TABLE IF EXISTS products')
@@ -16,15 +18,18 @@ const createProducts = () => {
 }
 
 const seedProductsDb = () => {
-  const pathToCSV = process.env.NODE_ENV === 'prod' ? '/home/bitnami/seed_files/products.csv' : path.resolve(_dirname, '../../products.csv');
+  if (process.env.NODE_ENV === 'dev') {
+    return;
+  }
+  // const pathToCSV = process.env.NODE_ENV === 'prod' ? '/home/bitnami/seed_files/products.csv' : path.resolve(__dirname, '/media/dk/UBUNTU 20_0/SDC_CSV/products.csv');
+  const pathToCSV = '/home/bitnami/seed_files/products.csv'
   const delimiter = ',';
-  // TODO: Watch for need of quotes around variables in template literal
-  const sqlString = `COPY products() FROM ${pathToCSV} DELIMITER ${delimiter} CSV HEADER`;
+  const sqlString = `COPY products(product_id, name, default_price, slogan, description, category) FROM '${pathToCSV}' DELIMITER '${delimiter}' CSV HEADER`;
   return pg.query(sqlString);
 };
 
 const indexProductId = () => {
-  const sqlString = 'CREATE INDEX idx_productId ON product(product_id)';
+  const sqlString = 'CREATE INDEX idx_productId ON products(product_id)';
 
   return pg.query(sqlString);
 }
@@ -34,4 +39,4 @@ createProducts()
   .then(seedProductsDb)
   .then(() => console.log('Imported all records, now creating index on productId'))
   .then(indexProductId)
-  .catch(console.log);
+  .catch(console.log)

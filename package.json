@@ -8,7 +8,9 @@
     "test": "jest",
     "start": "concurrently --kill-others-on-fail \"npm run build\" \"nodemon server/index.js\"",
     "build": "webpack --watch --mode development",
-    "lint": "./node_modules/.bin/eslint"
+    "lint": "./node_modules/.bin/eslint",
+    "seed": "node database/scripts/seedProductPGScript.js && node database/scripts/seedProductPG.js",
+    "seed-dev": "node database/scripts/seedPhotosPGScript.js && node database/scripts/seedPhotosPG.js"
   },
   "eslintConfig": {
     "extends": "airbnb",
@@ -24,6 +26,7 @@
     "concurrently": "^5.2.0",
     "cors": "^2.8.5",
     "debug": "^3.2.6",
+    "dotenv": "^8.2.0",
     "enzyme": "^3.11.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",

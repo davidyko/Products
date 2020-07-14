@@ -12,11 +12,11 @@ const dev = {
     //initial host of db connection
     host: process.env.DEV_DB_HOST || 'localhost',
     port: parseInt(process.env.DEV_DB_PORT, 10) || 5432,
-    database: process.env.DEV_DB_NAME || 'dk',
+    database: process.env.DEV_DB_NAME || 'sdc',
     user: process.env.USER,
     password: null,
   },
-  // for Redis
+  // for Redisls
   // cache: {
   //   port: 6379,
   //   host: 'localhost'

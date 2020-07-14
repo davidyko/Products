@@ -1,8 +1,8 @@
 const fs = require('fs');
 const faker = require('faker');
 
-const writeProducts = fs.createWriteStream('products.csv');
-writeProducts.write('_id, name, default_price, slogan, description, category', 'utf8');
+const writeProducts = fs.createWriteStream('/media/dk/UBUNTU 20_0/SDC_CSV/products.csv');
+writeProducts.write('product_id, name, default_price, slogan, description, category\n', 'utf8');
 
 function writeAllProducts(product, encoding, callback) {
   let i = 100;
@@ -17,7 +17,7 @@ function writeAllProducts(product, encoding, callback) {
       const slogan = faker.lorem.sentence();
       const description = faker.lorem.paragraph();
       const category = faker.commerce.department();
-      const data = `${id}, ${name}, ${default_price}, ${slogan}, ${description}. ${category}\n`;
+      const data = `${id}, ${name}, ${default_price}, ${slogan}, ${description}, ${category}\n`;
       if (i === 0) {
         product.write(data, encoding, callback);
       } else {
