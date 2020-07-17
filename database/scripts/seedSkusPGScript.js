@@ -7,7 +7,7 @@ writeSkus.write('sku_id, style_id, size, quantity\n', 'utf-8');
 function writeAllSkus(sku, encoding, callback) {
   // let i = 100;
   let sku_id = 1;
-  let style_id = 100;
+  let style_id = 10000000;
   // decrement this every run throuugh
   sizeArr = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
   function write() {

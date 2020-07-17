@@ -18,7 +18,7 @@ class App extends Component {
       results: [],
       activeResult: [],
       currentStyle: 0,
-      currentProduct: 5,
+      currentProduct: ranNum,
       averageRating: 0,
       starPercentage: 0,
       modal: false,
@@ -26,13 +26,14 @@ class App extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.getItem = this.getItem.bind(this);
     // this.toggleStar = this.toggleStar.bind(this);
   }
 
   componentDidMount() {
-    this.getProductData();
-    this.getReviewData();
-    this.getProductImages();
+    this.getProductData()
+    // this.getReviewData();
+      .then(() => this.getProductImages())
   }
 
   getProductData() {
@@ -44,6 +45,13 @@ class App extends Component {
       .then((data) => this.setState({ products: data[currentProduct - 1] }));
   }
 
+  getItem() {
+    const { currentProduct } = this.state;
+    fetch(`/api/products/${currentProduct}`)
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(err => console.log(err))
+  }
   // for now, chosen product will be ranNum
   // setState currentProduct to product's id/just ranNum?
   //
@@ -53,13 +61,13 @@ class App extends Component {
     const { currentProduct } = this.state;
     fetch(`/reviews/${currentProduct}/list`)
       .then((res) => res.json())
-      .then((data) => this.setState({ reviews: data.results }))
+      .then((data) => this.setState({ reviews: data.results }))// TODO: something after data.results
       .then(() => this.averageStarRating());
   }
 
   getProductImages() {
     const { currentStyle, currentProduct } = this.state;
-    fetch(`/products/${currentProduct}/styles/`)
+    return fetch(`/products/${currentProduct}/styles/`)
       .then((res) => res.json())
       .then((data) => {
         this.setState({

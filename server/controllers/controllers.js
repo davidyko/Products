@@ -1,11 +1,11 @@
-const model = require('./models/models.js');
+const model = require('../models/models.js');
 const faker = require('faker');
 const path = require ('path');
 
 module.exports = {
 
   getProductData: (req, res) => {
-    const { productList } = req.params.id;
+    const { productList } = req.params;
     model.getProductData(productList, (err, results) => {
       if (err) {
         console.log('Error getting product list from db');
@@ -19,7 +19,7 @@ module.exports = {
   },
 
   getItem: (req, res) => {
-    const { productId } = req.params.id;
+    const { productId } = req.params;
     model.getItem(productId, (err, results) => {
       if (err) {
         console.log('Error getting item from db');
@@ -33,7 +33,7 @@ module.exports = {
   },
 
   getStyles: (req, res) => {
-    const { productId } = req.params.id;
+    const { productId } = req.params;
     model.getStyles(productId, (err, results) => {
       if (err) {
         console.log('Error retrieving styles from db');
@@ -45,29 +45,29 @@ module.exports = {
     })
   },
 
-  getRelated: (req, res) => {
-    const { productId } = req.params.id;
-    model.getRelated(productId, (err, results) => {
-      if (err) {
-        console.log('Error retrieving related items from db');
-      } else {
-        res.json({
-          related: results
-        })
-      }
-    })
-  },
+  // getRelated: (req, res) => {
+  //   const { productId } = req.params;
+  //   model.getRelated(productId, (err, results) => {
+  //     if (err) {
+  //       console.log('Error retrieving related items from db');
+  //     } else {
+  //       res.json({
+  //         related: results
+  //       })
+  //     }
+  //   })
+  // },
 
-  getReview: (req, res) => {
-    const { productId } = req.params.id;
-    model.getReview(productId, (err, results) => {
-      if (err) {
-        console.log('Error retrieving review from db');
-      } else {
-        res.json({
-          review: results
-        })
-      }
-    })
-  }
+  // getReview: (req, res) => {
+  //   const { productId } = req.params;
+  //   model.getReview(productId, (err, results) => {
+  //     if (err) {
+  //       console.log('Error retrieving review from db');
+  //     } else {
+  //       res.json({
+  //         review: results
+  //       })
+  //     }
+  //   })
+  // }
 }
