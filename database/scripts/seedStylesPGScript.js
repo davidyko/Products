@@ -5,7 +5,7 @@ const writeStyles = fs.createWriteStream('/media/dk/UBUNTU 20_0/SDC_CSV/styles.c
 writeStyles.write('style_id, product_id, name, original_price, sale_price, default_style\n', 'utf-8')
 
 const writeAllStyles = (style, encoding, callback) => {
-  let product_id = 10000000;
+  let product_id = 100;
   let id = 0;
   function write() {
     let ok = true;

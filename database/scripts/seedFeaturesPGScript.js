@@ -5,7 +5,7 @@ const writeFeatures = fs.createWriteStream('/media/dk/UBUNTU 20_0/SDC_CSV/featur
 writeFeatures.write('feature_id, product_id, feature, value\n', 'utf-8');
 
 const writeAllFeatures = (features, encoding, callback) => {
-  let product_id = 10000000;
+  let product_id = 100;
   let id = 0;
   write = () => {
     let ok = true;

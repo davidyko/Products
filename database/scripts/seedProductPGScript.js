@@ -5,7 +5,7 @@ const writeProducts = fs.createWriteStream('/media/dk/UBUNTU 20_0/SDC_CSV/produc
 writeProducts.write('product_id, name, default_price, slogan, description, category\n', 'utf8');
 
 function writeAllProducts(product, encoding, callback) {
-  let i = 10000000;
+  let i = 100;
   let id = 0;
   function write() {
     let ok = true;

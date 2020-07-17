@@ -3,7 +3,7 @@ const config = require('../config.js');
 
 // const pool = new Pool(config.db);
 const pool = new Pool({
-  user: 'postgres',
+  user: 'sdc',
   password: 'abc',
   database: 'sdc',
 });

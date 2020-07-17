@@ -5,7 +5,7 @@ const createSkus = () => {
   const query = `CREATE TABLE skus (
     sku_id SERIAL PRIMARY KEY,
     style_id INT NOT NULL,
-    size VARCHAR(3) NOT NULL,
+    size TEXT NOT NULL,
     quantity INT NOT NULL
   )`;
 

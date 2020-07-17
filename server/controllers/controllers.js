@@ -1,6 +1,4 @@
 const model = require('../models/models.js');
-const faker = require('faker');
-const path = require ('path');
 
 module.exports = {
 
@@ -12,10 +10,10 @@ module.exports = {
       } else {
         console.log('Retrieved product list from db');
         res.json({
-          list: results
-        })
+          list: results,
+        });
       }
-    })
+    });
   },
 
   getItem: (req, res) => {
@@ -26,23 +24,24 @@ module.exports = {
       } else {
         console.log('Retrieved item from db');
         res.json({
-          item: results
-        })
+          item: results,
+        });
       }
-    })
+    });
   },
 
   getStyles: (req, res) => {
+    console.log('controller styles')
     const { productId } = req.params;
     model.getStyles(productId, (err, results) => {
       if (err) {
-        console.log('Error retrieving styles from db');
+        console.log('Error retrieving styles from db', err);
       } else {
         res.json({
-          styles: results
-        })
+          styles: results,
+        });
       }
-    })
+    });
   },
 
   // getRelated: (req, res) => {
