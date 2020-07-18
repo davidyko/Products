@@ -5,7 +5,7 @@ const writePhotos = fs.createWriteStream('/media/dk/UBUNTU 20_0/SDC_CSV/photos.c
 writePhotos.write('photo_id, style_id, url, thumbnail_url\n', 'utf8');
 
 function writeAllPhotos(photo, encoding, callback) {
-  let style_id = 100;
+  let style_id = 20000000;
   let id = 0;
   function write() {
     let ok = true;

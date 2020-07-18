@@ -13,12 +13,12 @@ class App extends Component {
     super();
 
     this.state = {
-      products: [],
+      products: {},
       reviews: [],
       results: [],
       activeResult: [],
       currentStyle: 0,
-      currentProduct: ranNum,
+      currentProduct: 99,
       averageRating: 0,
       starPercentage: 0,
       modal: false,
@@ -26,56 +26,63 @@ class App extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
-    this.getItem = this.getItem.bind(this);
+    // this.getItem = this.getItem.bind(this);
+    this.getProductData = this.getProductData.bind(this);
+    this.getProductImages = this.getProductImages.bind(this);
     // this.toggleStar = this.toggleStar.bind(this);
   }
 
   componentDidMount() {
-    this.getProductData()
+    this.getProductData();
+    this.getProductImages();
     // this.getReviewData();
-      .then(() => this.getProductImages())
+    // .then(() => this.getProductImages())
   }
 
   getProductData() {
     const { currentProduct } = this.state;
-    fetch('/products/list')
-      .then((res) => res.json())
-
-      //TODO: log what is in response. Should be object with "list" key and data in value
-      .then((data) => this.setState({ products: data[currentProduct - 1] }));
-  }
-
-  getItem() {
-    const { currentProduct } = this.state;
     fetch(`/api/products/${currentProduct}`)
-      .then(res => res.json())
-      .then(data => console.log(data))
-      .catch(err => console.log(err))
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          products: data.items[0],
+        });
+      })
+      .catch((err) => console.log(err));
   }
+
+  getProductImages() {
+    const { currentStyle, currentProduct } = this.state;
+    return fetch(`/api/products/${currentProduct}/styles/`)
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          results: data.results,
+          activeResult: data.results[0],
+        });
+      });
+  }
+
+  // getItem() {
+  //   const { currentProduct } = this.state;
+  //   fetch(`/api/products/${currentProduct}`)
+  //     .then(res => res.json())
+  //     .then(data => console.log(data))
+  //     .catch(err => console.log(err))
+  // }
   // for now, chosen product will be ranNum
   // setState currentProduct to product's id/just ranNum?
   //
 
   // TODO: Might have to refactor endpoint to be able to accept currentProduct as a query/parameter
-  getReviewData() {
-    const { currentProduct } = this.state;
-    fetch(`/reviews/${currentProduct}/list`)
-      .then((res) => res.json())
-      .then((data) => this.setState({ reviews: data.results }))// TODO: something after data.results
-      .then(() => this.averageStarRating());
-  }
+  // getReviewData() {
+  //   const { currentProduct } = this.state;
+  //   fetch(`/reviews/${currentProduct}/list`)
+  //     .then((res) => res.json())
+  //     .then((data) => this.setState({ reviews: data.results }))// TODO: something after data.results
+  //     .then(() => this.averageStarRating());
+  // }
 
-  getProductImages() {
-    const { currentStyle, currentProduct } = this.state;
-    return fetch(`/products/${currentProduct}/styles/`)
-      .then((res) => res.json())
-      .then((data) => {
-        this.setState({
-          results: data.results,
-          activeResult: data.results[currentStyle],
-        });
-      });
-  }
 
   // selectModal(info) {
   //   this.setState({ modal: !this.state.modal });
