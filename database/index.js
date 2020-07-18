@@ -1,2 +1,2 @@
 const path = require('path');
-const pgdb = require('../pgconnection.js');
+const pgdb = require('./pgconnection.js');

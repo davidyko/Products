@@ -5,16 +5,16 @@ const createSkus = () => {
   const query = `CREATE TABLE skus (
     sku_id SERIAL PRIMARY KEY,
     style_id INT NOT NULL,
-    size VARCHAR(3) NOT NULL,
+    size TEXT NOT NULL,
     quantity INT NOT NULL
   )`;
 
   return pg.query('DROP TABLE IF EXISTS skus')
-  .then(() => pg.query(query))
+    .then(() => pg.query(query))
 };
 
 const seedSkusDb = () => {
-  // const pathToCSV = process.env.NODE_ENV === 'prod' ? 'home/bitnami/seed_files/skus.csv' : path.resolve(__dirname, 'media/dk/UBUNTU 20_0/SDC_CSV/skus.csv');
+// const pathToCSV = process.env.NODE_ENV === 'prod' ? 'home/bitnami/seed_files/skus.csv' : path.resolve(__dirname, 'media/dk/UBUNTU 20_0/SDC_CSV/skus.csv');
   if (process.env.NODE_ENV === 'dev') {
     return;
   }

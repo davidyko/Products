@@ -14,7 +14,7 @@ const dev = {
     port: parseInt(process.env.DEV_DB_PORT, 10) || 5432,
     database: process.env.DEV_DB_NAME || 'sdc',
     user: process.env.USER,
-    password: null,
+    password: 'abc',
   },
   // for Redisls
   // cache: {

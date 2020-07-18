@@ -7,7 +7,7 @@ const createStyles = () => {
     product_id INT NOT NULL,
     name VARCHAR(50) NOT NULL,
     original_price INT NOT NULL,
-    sale_price INT NOT NULL,
+    sale_price FLOAT NOT NULL,
     default_style INT NOT NULL
   )`;
 
