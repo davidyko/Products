@@ -1,7 +1,7 @@
 const fs = require('fs');
 const faker = require('faker');
 
-const writeProducts = fs.createWriteStream('/media/dk/UBUNTU 20_0/SDC_CSV/products.csv');
+const writeProducts = fs.createWriteStream('products.csv');
 writeProducts.write('product_id, name, default_price, slogan, description, category\n', 'utf8');
 
 function writeAllProducts(product, encoding, callback) {

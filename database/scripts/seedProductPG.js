@@ -1,7 +1,6 @@
 const path = require('path');
 const pg = require('../pgconnection.js');
 
-
 // TODO: TEXT is faster than VARCHAR(num). Play
 const createProducts = () => {
   const query = `CREATE TABLE products (
@@ -14,15 +13,11 @@ const createProducts = () => {
   )`;
 
   return pg.query('DROP TABLE IF EXISTS products')
-  .then(() => pg.query(query))
-}
+    .then(() => pg.query(query))
+};
 
 const seedProductsDb = () => {
-  if (process.env.NODE_ENV === 'dev') {
-    return;
-  }
-  // const pathToCSV = process.env.NODE_ENV === 'prod' ? '/home/bitnami/seed_files/products.csv' : path.resolve(__dirname, '/media/dk/UBUNTU 20_0/SDC_CSV/products.csv');
-  const pathToCSV = '/home/bitnami/seed_files/products.csv'
+  const pathToCSV = process.env.NODE_ENV === 'prod' ? '' : path.resolve(__dirname, '../../products.csv');
   const delimiter = ',';
   const sqlString = `COPY products(product_id, name, default_price, slogan, description, category) FROM '${pathToCSV}' DELIMITER '${delimiter}' CSV HEADER`;
   return pg.query(sqlString);
@@ -30,13 +25,12 @@ const seedProductsDb = () => {
 
 const indexProductId = () => {
   const sqlString = 'CREATE INDEX idx_productId ON products(product_id)';
-
   return pg.query(sqlString);
-}
+};
 
 createProducts()
   .then(() => console.log('Created products table, now importing data'))
   .then(seedProductsDb)
   .then(() => console.log('Imported all records, now creating index on productId'))
   .then(indexProductId)
-  .catch(console.log)
+  .catch(console.log);

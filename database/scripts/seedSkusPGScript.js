@@ -1,13 +1,13 @@
 const fs = require('fs');
 const faker = require('faker');
 
-const writeSkus = fs.createWriteStream('/media/dk/UBUNTU 20_0/SDC_CSV/skus.csv');
+const writeSkus = fs.createWriteStream('skus.csv');
 writeSkus.write('sku_id, style_id, size, quantity\n', 'utf-8');
 
 function writeAllSkus(sku, encoding, callback) {
   // let i = 100;
   let sku_id = 1;
-  let style_id = 20000000;
+  let style_id = 10000000;
   // decrement this every run throuugh
   sizeArr = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
   function write() {
@@ -35,7 +35,7 @@ function writeAllSkus(sku, encoding, callback) {
       sku.once('drain', write);
     }
   }
-  write()
+  write();
 }
 
 writeAllSkus(writeSkus, 'utf-8', () => {

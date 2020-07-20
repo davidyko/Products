@@ -12,7 +12,6 @@
     "seed": "node database/scripts/seedProductPGScript.js && node database/scripts/seedProductPG.js",
     "seed-dev": "node database/scripts/seedPhotosPGScript.js && node database/scripts/seedPhotosPG.js && node database/scripts/seedFeaturesPG.js && node database/scripts/seedFeaturesPGScript.js && node database/scripts/seedSkusPG.js && node database/scripts/seedSkusPGScript.js && node database/scripts/seedStylesPG.js && node database/scripts/seedStylesPGScript.js",
     "seed-dev-two": "node database/scripts/seedProductPGScript.js && node database/scripts/seedProductPG.js && node database/scripts/seedSkusPG.js && node database/scripts/seedSkusPGScript.js && node database/scripts/seedStylesPG.js && node database/scripts/seedStylesPGScript.js"
-
   },
   "eslintConfig": {
     "extends": "airbnb",

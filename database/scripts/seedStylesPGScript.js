@@ -1,7 +1,7 @@
 const fs = require('fs');
 const faker = require('faker');
 
-const writeStyles = fs.createWriteStream('/media/dk/UBUNTU 20_0/SDC_CSV/styles.csv');
+const writeStyles = fs.createWriteStream('styles.csv');
 writeStyles.write('style_id, product_id, name, original_price, sale_price, default_style\n', 'utf-8')
 
 const writeAllStyles = (style, encoding, callback) => {
@@ -11,7 +11,7 @@ const writeAllStyles = (style, encoding, callback) => {
     let ok = true;
     do {
       product_id -= 1;
-      for (let i = 0; i < 2; i++) {
+      for (let i = 0; i < 1; i++) {
         id += 1;
         let name = faker.commerce.productAdjective();
         let original_price = Math.floor(Math.random() * 1000 + 1);

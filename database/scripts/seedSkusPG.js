@@ -14,11 +14,7 @@ const createSkus = () => {
 };
 
 const seedSkusDb = () => {
-// const pathToCSV = process.env.NODE_ENV === 'prod' ? 'home/bitnami/seed_files/skus.csv' : path.resolve(__dirname, 'media/dk/UBUNTU 20_0/SDC_CSV/skus.csv');
-  if (process.env.NODE_ENV === 'dev') {
-    return;
-  }
-  const pathToCSV = 'home/bitnami/seed_files/features.csv';
+  const pathToCSV = process.env.NODE_ENV === 'prod' ? '' : path.resolve(__dirname, '../../skus.csv');
   const delimiter = ',';
   const sqlString = `COPY skus(sku_id, style_id, size, quantity) FROM '${pathToCSV}' DELIMITER '${delimiter}' CSV HEADER`;
   return pg.query(sqlString);
@@ -26,7 +22,6 @@ const seedSkusDb = () => {
 
 const indexSkusId = () => {
   const sqlString = 'CREATE INDEX idx_skusId ON skus(style_id)';
-
   return pg.query(sqlString);
 };
 
@@ -35,4 +30,4 @@ createSkus()
   .then(seedSkusDb)
   .then(() => console.log('Imported all records, now creating index on sku_id'))
   .then(indexSkusId)
-  .catch(console.log)
+  .catch(console.log);

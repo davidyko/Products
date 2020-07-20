@@ -1,17 +1,17 @@
 const fs = require('fs');
 const faker = require('faker');
 
-const writePhotos = fs.createWriteStream('/media/dk/UBUNTU 20_0/SDC_CSV/photos.csv');
+const writePhotos = fs.createWriteStream('photos.csv');
 writePhotos.write('photo_id, style_id, url, thumbnail_url\n', 'utf8');
 
 function writeAllPhotos(photo, encoding, callback) {
-  let style_id = 20000000;
+  let style_id = 10000000;
   let id = 0;
   function write() {
     let ok = true;
     do {
       style_id -= 1;
-      for (let i = 0; i < 2; i++) {
+      for (let i = 0; i < 1; i++) {
         id += 1;
         let url = faker.image.imageUrl();
         let thumbnail_url = faker.image.imageUrl();
@@ -27,7 +27,7 @@ function writeAllPhotos(photo, encoding, callback) {
       photo.once('drain', write);
     }
   }
-  write()
+  write();
 }
 
 writeAllPhotos(writePhotos, 'utf-8', () => {

@@ -10,17 +10,13 @@ const createPhotos = () => {
   )`;
 
   return pg.query('DROP TABLE IF EXISTS photos')
-  .then(() => pg.query(query))
-}
+    .then(() => pg.query(query))
+};
 
 const seedPhotosDB = () => {
-  // const pathtoCSV = process.env.NODE_ENV === 'prod' ? '/home/bitnami/seed_files/products.csv' : path.resolve(__dirname, '/media/dk/UBUNTU 20_0/SDC_CSV/photos.csv');
-  if (process.env.NODE_ENV === 'dev') {
-    return;
-  }
-  const pathToCSV = 'home/bitnami/seed_files/features.csv';
+  const pathtoCSV = process.env.NODE_ENV === 'prod' ? '' : path.resolve(__dirname, '../../photos.csv');
   const delimiter = ',';
-  const sqlString = `COPY photos(photo_id, style_id, url, thumbnail_url) FROM ${pathtoCSV}' DELIMITER '${delimiter}' CSV HEADER`;
+  const sqlString = `COPY photos(photo_id, style_id, url, thumbnail_url) FROM '${pathtoCSV}' DELIMITER '${delimiter}' CSV HEADER`;
   return pg.query(sqlString);
 };
 
@@ -35,4 +31,4 @@ createPhotos()
   .then(seedPhotosDB)
   .then(() => console.log('Imported all records, now creating index on style_id'))
   .then(indexPhotosId)
-  .catch(console.log)
+  .catch(console.log);

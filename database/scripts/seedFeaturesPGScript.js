@@ -1,7 +1,7 @@
 const faker = require('faker');
 const fs = require('fs');
 
-const writeFeatures = fs.createWriteStream('/media/dk/UBUNTU 20_0/SDC_CSV/features.csv');
+const writeFeatures = fs.createWriteStream('features.csv');
 writeFeatures.write('feature_id, product_id, feature, value\n', 'utf-8');
 
 const writeAllFeatures = (features, encoding, callback) => {
@@ -11,7 +11,7 @@ const writeAllFeatures = (features, encoding, callback) => {
     let ok = true;
     do {
       product_id -= 1;
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 1; i++) {
         id += 1;
         let feature = faker.hacker.noun();
         let value = faker.hacker.adjective();
