@@ -1,0 +1,27 @@
+config:
+  target: 'http://localhost:3001'
+  phases:
+    - duration: 10
+      arrivalRate: 3
+      name: 'stand-up'
+    - duration: 20
+      arrivalRate: 10
+      name: 'high-traffic'
+  processor: './artillery_functions.js'
+scenarios:
+  - flow:
+    - get:
+        url: '/'
+    - get:
+        url: '/bundle.js'
+    - loop:
+      - function: 'getRandFirst'
+      - get:
+          url: '/products/{{ id }}/styles'
+      - function: 'getRandSecond'
+      - get:
+          url: '/products/{{ id }}/styles'
+      - function: 'getRandTenPercent'
+      - get:
+          url: '/products/{{ id }}/styles'
+      count: 68

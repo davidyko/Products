@@ -41,7 +41,7 @@ class App extends Component {
 
   getProductData() {
     const { currentProduct } = this.state;
-    fetch(`/api/products/${currentProduct}`)
+    fetch(`/products/${currentProduct}`)
       .then((res) => res.json())
       .then((data) => {
         this.setState({
@@ -53,7 +53,7 @@ class App extends Component {
 
   getProductImages() {
     const { currentStyle, currentProduct } = this.state;
-    return fetch(`/api/products/${currentProduct}/styles/`)
+    return fetch(`/products/${currentProduct}/styles/`)
       .then((res) => res.json())
       .then((data) => {
         this.setState({

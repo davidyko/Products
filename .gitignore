@@ -104,5 +104,6 @@ dist
 .tern-port
 
 
-.csv
+*.csv
 .env
+newrelic.js

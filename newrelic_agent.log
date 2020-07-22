@@ -1,0 +1,20 @@
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":75983,"time":"2020-07-22T01:33:38.337Z","msg":"Using New Relic for Node.js. Agent version: 6.11.0; Node version: v10.19.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":75983,"time":"2020-07-22T01:33:38.445Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":75983,"time":"2020-07-22T01:33:38.799Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":75983,"time":"2020-07-22T01:33:38.799Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":75983,"time":"2020-07-22T01:33:40.844Z","msg":"Agent state changed from connecting to connected."}
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":75983,"time":"2020-07-22T01:33:40.845Z","msg":"Connected to collector-004.newrelic.com:443 with agent run ID BT--nna6e8NZACrEuSJho5hfF5fEAAgBAAAnIQEAASjPAgQiYaOWAwAGNi4xMS4wAApXYWtpbmdNaW5kAAhQcm9kdWN0cw.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":75983,"time":"2020-07-22T01:33:40.845Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/2802873/applications/576824214","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":75983,"time":"2020-07-22T01:33:40.846Z","msg":"Valid event_harvest_config received. Updating harvest cycles. {\"report_period_ms\":5000,\"harvest_limits\":{\"error_event_data\":8,\"analytic_event_data\":833,\"custom_event_data\":83}}"}
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":75983,"time":"2020-07-22T01:33:40.848Z","msg":"Agent state changed from connected to started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":75983,"time":"2020-07-22T01:33:41.849Z","msg":"Starting initial 1000ms harvest."}
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":77049,"time":"2020-07-22T01:39:54.836Z","msg":"Using New Relic for Node.js. Agent version: 6.11.0; Node version: v10.19.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":77049,"time":"2020-07-22T01:39:54.948Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":77049,"time":"2020-07-22T01:39:55.388Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":77049,"time":"2020-07-22T01:39:55.388Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":77049,"time":"2020-07-22T01:39:57.179Z","msg":"Agent state changed from connecting to connected."}
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":77049,"time":"2020-07-22T01:39:57.179Z","msg":"Connected to collector-004.newrelic.com:443 with agent run ID BavEywuS2tMDACrEuSJho5hfF5ksAAgBAAAnIQEAASz5AgQiYaOWAwAGNi4xMS4wAApXYWtpbmdNaW5kAAhQcm9kdWN0cw.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":77049,"time":"2020-07-22T01:39:57.179Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/2802873/applications/576824214","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":77049,"time":"2020-07-22T01:39:57.180Z","msg":"Valid event_harvest_config received. Updating harvest cycles. {\"report_period_ms\":5000,\"harvest_limits\":{\"error_event_data\":8,\"analytic_event_data\":833,\"custom_event_data\":83}}"}
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":77049,"time":"2020-07-22T01:39:57.182Z","msg":"Agent state changed from connected to started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"WakingMind","pid":77049,"time":"2020-07-22T01:39:58.183Z","msg":"Starting initial 1000ms harvest."}
