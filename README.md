@@ -1,5 +1,5 @@
 
-#MAZE Mercantile Reviews Service
+<h1> MAZE Mercantile Reviews Service
 
 MAZE Mercantile is an e-commerce clothing retailer. For this project I inherited front-end legacy code and was tasked with building out an optimized back-end that could handle high web traffic. I worked with two other teammates, each of us focusing on a different microservice; I focused on the Product (product description) service.
 
