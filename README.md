@@ -4,10 +4,12 @@
 MAZE Mercantile is an e-commerce clothing retailer. For this project I inherited front-end legacy code and built out an optimized back-end that could handle high web traffic. I worked with two other teammates, each of us focusing on a different microservice; I focused on the Product (product description) service.
 
 <h2>Achievements and Optimizations</h2>
-Seeded a PostgreSQL database with over 100 million records.
-Optimized PostgreSQL query times by 99% through indexing.
-Exceeded goal of 1,000 rps on EC2 instance exponentially: 15,172 average rps (stretch goal: 10k rps).
-Experienced 425 ms average latency while aiming for under 2000 ms.
+<ul>
+  <li>Seeded a PostgreSQL database with over 100 million records.</li>
+  <li>Optimized PostgreSQL query times by 99% through indexing.</li>
+  <li>Exceeded goal of 1,000 rps on EC2 instance exponentially: 15,172 average rps (stretch goal: 10k rps).</li>
+  <li>Experienced 425 ms average latency while aiming for under 2000 ms.</li>
+</ul>
 
 <h2>Technologies Used</h2>
 <ul>
