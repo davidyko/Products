@@ -12,7 +12,7 @@ MAZE Mercantile is an e-commerce clothing retailer. For this project I inherited
 </ul>
 
 <h2>New Relic Stats Screenshot</h2>
-![](file:///home/dk/Pictures/ScreenshotGHProducts.jpg "New Relic Stats")
+![](file:///home/dk/Pictures/ScreenshotGHProducts.jpg)
 
 <h2>Technologies Used</h2>
 <ul>
