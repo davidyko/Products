@@ -7,7 +7,7 @@ MAZE Mercantile is an e-commerce clothing retailer. For this project I inherited
 Seeded a PostgreSQL database with over 100 million records.
 Optimized PostgreSQL query times by 99% through indexing.
 
-<h3>Technologies Used</h3>
+<h2>Technologies Used</h2>
 <ul>
   <li>React</li>
   <li>Node</li>
