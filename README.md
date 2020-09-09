@@ -12,7 +12,8 @@ MAZE Mercantile is an e-commerce clothing retailer. For this project I inherited
 </ul>
 
 <h2>New Relic Stats Screenshot</h2>
-![](~/Pictures/ScreenshotGHProducts.jpeg)
+![Web transactions time: rps; Throughput: rpm](https://imgur.com/ZQ9vEBV
+"")
 
 <h2>Technologies Used</h2>
 <ul>
