@@ -7,7 +7,6 @@ MAZE Mercantile is an e-commerce clothing retailer. For this project I inherited
 Optimized PostgreSQL query times by 99% through indexing.
 
 <h3>Technologies Used</h3>
-
 React
 Node
 Express
