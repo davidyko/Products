@@ -6,6 +6,8 @@ MAZE Mercantile is an e-commerce clothing retailer. For this project I inherited
 <h2>Achievements and Optimizations</h2>
 Seeded a PostgreSQL database with over 100 million records.
 Optimized PostgreSQL query times by 99% through indexing.
+Exceeded goal of 1,000 rps on EC2 instance exponentially: 15,172 average rps (stretch goal: 10k rps).
+Experienced 425 ms average latency while aiming for under 2000 ms.
 
 <h2>Technologies Used</h2>
 <ul>
