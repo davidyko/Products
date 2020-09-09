@@ -27,7 +27,7 @@ Node 6.13.0
 npm
 PostgreSQL
 
-<h3>Development</h3> 
+<h3>Development</h3><hr />
 Executing the code below will install dependencies, seed the database, start the server, and start webpack. Examine the package.json file for additional scripts.
 
     npm install
