@@ -11,9 +11,6 @@ MAZE Mercantile is an e-commerce clothing retailer. For this project I inherited
   <li>Experienced 425 ms average latency while aiming for under 2000 ms.</li>
 </ul>
 
-<h2>New Relic Stats Screenshot</h2>
-![](file:///home/dk/Pictures/ScreenshotGHProducts.jpg)
-
 <h2>Technologies Used</h2>
 <ul>
   <li>React</li>
